@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, Platform, AlertController} from 'ionic-angular';
 
 /**
  * Generated class for the Hello page.
@@ -12,19 +12,18 @@ import { IonicPage, NavController, NavParams, ActionSheetController, Platform } 
   selector: 'page-hello',
   templateUrl: 'hello.html',
 })
-export class Hello {
-	  
-constructor(
-    public platform: Platform,
-    public actionsheetCtrl: ActionSheetController
-  ) { }
+export class Hello {  	
+	constructor(
+		public platform: Platform,
+		public actionsheetCtrl: ActionSheetController,
+		public alertCtrl: AlertController
+	) { }
   
 	ionViewDidLoad() {
-	console.log('ionViewDidLoad Hello');
+		console.log('ionViewDidLoad Hello');
 	}
 
-	// Click to open action sheet
-	openMenu() {
+ 	openMenu() { // deom action sheet
 		let actionSheet = this.actionsheetCtrl.create({
 		  title: '相册',
 		  cssClass: 'action-sheets-basic-page',
@@ -69,5 +68,34 @@ constructor(
 		  ]
 		});
 		actionSheet.present();
-	}	
+	}; 
+	
+	doAlerts() {
+		/* 一般消息窗口 */
+		let alert = this.alertCtrl.create({
+		  title: '消息',
+		  message: '亲爱的朋友，你好!',
+		  buttons: [
+			{
+				text: "当我没说",
+				handler: () => {
+					console.log("当我没说");
+				}
+			},
+			{
+				text: "不懂",
+				handler: () => {
+					console.log("不懂");
+				}
+			},
+			{
+				text: "朕知道了",
+				handler: () => {
+					console.log("朕知道了");
+				}
+			}
+		  ]
+		});
+		alert.present()	
+	}
 }
