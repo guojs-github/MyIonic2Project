@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MenuController } from 'ionic-angular';
 
 import { Hello } from '../hello/hello';
 
@@ -10,7 +11,7 @@ import { Hello } from '../hello/hello';
 export class HomePage {
 	helloPage = Hello;
 	
-	constructor(public navCtrl: NavController) {
-
+	constructor(public navCtrl: NavController, public menu: MenuController) {
+		menu.enable(true);
 	}
 }

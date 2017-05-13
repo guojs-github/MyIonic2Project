@@ -1,7 +1,12 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>主页</ion-title>
+		<ion-buttons left>
+			<button ion-button icon-only menuToggle>
+				<ion-icon name='menu'></ion-icon>
+			</button>
+		</ion-buttons>  
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
@@ -14,5 +19,5 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
-	<button [navPush]="helloPage">Hello!</button>
+  <button [navPush]="helloPage">Hello!</button>
 </ion-content>
