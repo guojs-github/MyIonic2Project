@@ -74,7 +74,7 @@ export class Hello {
 		actionSheet.present();
 	}; /* openMenu */
 	
-	doAlerts() {
+	doAlert() {
 		/* 一般消息窗口 */
 		let alert = this.alertCtrl.create({
 		  title: '消息',
@@ -100,6 +100,35 @@ export class Hello {
 			}
 		  ]
 		});
-		alert.present()	
-	} /* doAlerts */
+		alert.present()			
+	}; /* doAlert */
+
+	doAlertCheckbox() {
+		/* 可多选的对话框 */
+		let alert = this.alertCtrl.create();
+		alert.setTitle('你去过哪些行星呢？');
+
+		alert.addInput({ /* 添加选项 */
+			type: 'checkbox',
+			label: 'Alderaan 奥德兰',
+			value: 'value1',
+			checked: true /* 默认选中 */
+		});
+
+		alert.addInput({
+			type: 'checkbox',
+			label: 'Bespin 贝斯平',
+			value: 'value2'
+		});
+
+		/* 添加按钮 */
+		alert.addButton('取消');
+		alert.addButton({
+			text: '选好了',
+			handler: data => {
+				console.log('Checkbox data:', data);
+			}
+		});
+		alert.present();		
+	}; /* doAlertCheckbox */	
 }

@@ -15,8 +15,85 @@
 
 <ion-content padding class="action-sheets-basic-page">
 	<button ion-button block (click)="openMenu()">Action Sheet 测试</button>
-	<button class="button button-white" ion-button block (click)="doAlerts()">
-		消息窗口演示 &nbsp;
+	<button class="button button-white" ion-button block (click)="doAlert()">
+		消息窗口 &nbsp;
 		<ion-badge item-right>101</ion-badge>
 	</button>
+	<button class="button" color="light" ion-button block (click)="doAlertCheckbox()">
+		多选消息窗口 &nbsp;
+	</button>
+
+	<ion-card>
+		<ion-item>
+			<ion-avatar item-start>
+			  <img src="assets/img/marty-avatar.png">
+			</ion-avatar>
+			<h2>Marty McFly</h2>
+			<p>1955年11月5日</p>
+		</ion-item>
+		
+		<img src="assets/img/advance-card-bttf.png">
+
+		<ion-card-content>
+			<p>Wait a minute. Wait a minute, Doc. Uhhh... 你建造了一台时间机器... out of a DeLorean?! Whoa. This is heavy.</p>
+		</ion-card-content>
+
+		<ion-row>
+			<ion-col>
+			  <button ion-button color="primary" clear small icon-left>
+				<ion-icon name='thumbs-up'></ion-icon>
+				12 喜欢
+			  </button>
+			</ion-col>
+
+			<ion-col>
+			  <button ion-button color="primary" clear small icon-left>
+				<ion-icon name='text'></ion-icon>
+				4 评论
+			  </button>
+			</ion-col>
+			<ion-col align-self-center text-center>
+			  <ion-note>
+				11小时前
+			  </ion-note>
+			</ion-col>
+		</ion-row>
+	</ion-card>	
+
+	<ion-card>
+		<ion-item>
+			<ion-avatar item-start>
+			  <img src="assets/img/sarah-avatar.png.jpeg">
+			</ion-avatar>
+			<h2>Sarah Connor</h2>
+			<p>1984年5月12日</p>
+		</ion-item>
+
+		<img src="assets/img/advance-card-tmntr.jpg">
+
+		<ion-card-content>
+			<p>I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.</p>
+		</ion-card-content>
+
+		<ion-row>
+			<ion-col>
+				<button ion-button color="primary" clear small icon-left>
+				<ion-icon name='thumbs-up'></ion-icon>
+					30 喜欢
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button color="primary" clear small icon-left>
+				<ion-icon name='text'></ion-icon>
+					64 评论
+				</button>
+			</ion-col>
+			<ion-col align-self-center text-center>
+				<ion-note>
+					30年前
+				</ion-note>
+			</ion-col>
+		</ion-row>
+	</ion-card>	
+
 </ion-content>
