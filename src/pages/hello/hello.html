@@ -20,7 +20,7 @@
 		<ion-badge item-right>101</ion-badge>
 	</button>
 	<button class="button" color="light" ion-button block (click)="doAlertCheckbox()">
-		多选消息窗口 &nbsp;
+		多选消息窗口
 	</button>
 
 	<ion-card>
@@ -96,4 +96,78 @@
 		</ion-row>
 	</ion-card>	
 
+	<ion-item>
+	  <ion-label>去休假么？</ion-label>
+	  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+	</ion-item>
+
+	<!-- 输入样例，包括时间输入 -->
+	<ion-list>
+		<ion-item>
+		  <ion-input placeholder="去哪儿呢？"></ion-input>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-item>
+		  <ion-label>开始日期</ion-label>
+		  <ion-datetime displayFormat="YYYY年MM月DD日" [(ngModel)]="_event.month"></ion-datetime>
+		</ion-item>
+
+
+		<ion-item>
+		  <ion-label>开始时间</ion-label>
+		  <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="_event.timeStarts"></ion-datetime>
+		</ion-item>
+
+		<ion-item>
+		  <ion-label>结束如期</ion-label>
+		  <ion-datetime displayFormat="YYYY年MM月DD日" [(ngModel)]="_event.timeEnds"></ion-datetime>
+		</ion-item>
+
+		<button ion-item>
+		  <ion-label>Repeat</ion-label>
+		  <ion-note item-end>Never</ion-note>
+		</button>
+
+		<button ion-item>
+		  <ion-label>Travel Time</ion-label>
+		  <ion-note item-end>None</ion-note>
+		</button>
+	</ion-list>
+
+	<!-- 快捷方式圆球 -->
+	<ion-fab top right edge>
+		<button ion-fab mini class="red-button"><ion-icon name="add"></ion-icon></button>
+		<ion-fab-list>
+			<button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+			<button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+			<button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+			<button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+		</ion-fab-list>
+	</ion-fab>
+
+	<ion-card (tap)="onTap($event)">
+		<ion-item>
+			点击: {{tap}} 次
+		</ion-item>
+	</ion-card>
+
+	<ion-card (press)="onPress($event)">
+		<ion-item>
+			按压: {{press}} 次
+		</ion-item>
+	</ion-card>
+
+	<ion-card (pan)="onPan($event)">
+		<ion-item>
+			手机滑动: {{pan}}次
+		</ion-item>
+	</ion-card>
+
+	<ion-card (swipe)="onSwipe($event)">
+		<ion-item>
+			手指划过: {{swipe}}次
+		</ion-item>
+	</ion-card>	
 </ion-content>

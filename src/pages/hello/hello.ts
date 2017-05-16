@@ -13,7 +13,18 @@ import { IonicPage/* , NavController, NavParams */, ActionSheetController, Platf
   templateUrl: 'hello.html',
 })
 export class Hello {  
-	public _platform: Platform; /* platform API reference */
+	private _platform: Platform; /* platform API reference */
+	private _event = { // 日期输入的相关数据项目
+		month: '2017-08-19',
+		timeStarts: '07:43',
+		timeEnds: '2017-08-20'
+	};
+
+	/* 手势测试 gesture */
+	private press: number = 0;
+	private pan: number = 0;
+	private swipe: number = 0;
+	private tap: number = 0;	
 	
 	constructor(
 		public platform: Platform,
@@ -131,4 +142,18 @@ export class Hello {
 		});
 		alert.present();		
 	}; /* doAlertCheckbox */	
+
+	/* 手势 */
+	onTap(e) { // 点一下立即放松
+		this.tap++
+	}
+	onPress(e) { // 按下去，等一下松开
+		this.press++;
+	}
+	onPan(e) { // 按下去，在屏幕上左右滑动，别抬起来
+		this.pan++
+	}
+	onSwipe(e) { // 按下去，在屏幕上一侧滑动后，手抬起来
+		this.swipe++
+	}
 }
