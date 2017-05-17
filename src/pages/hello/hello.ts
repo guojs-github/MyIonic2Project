@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage/* , NavController, NavParams */, ActionSheetController, Platform, AlertController} from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the Hello page.
@@ -29,7 +30,8 @@ export class Hello {
 	constructor(
 		public platform: Platform,
 		public actionSheetCtrl: ActionSheetController,
-		public alertCtrl: AlertController
+		public alertCtrl: AlertController,
+		public loadingCtrl : LoadingController
 	) { 
 		this._platform = platform;
 	}
@@ -155,5 +157,17 @@ export class Hello {
 	}
 	onSwipe(e) { // 按下去，在屏幕上一侧滑动后，手抬起来
 		this.swipe++
+	}
+	
+	flashWait() { // 闪现一个等待窗口
+		let loading = this.loadingCtrl.create({
+			content: '换衣服，请等一下...'
+		});
+
+		loading.present();
+
+		setTimeout(() => {
+			loading.dismiss();
+		}, 3000);	
 	}
 }
