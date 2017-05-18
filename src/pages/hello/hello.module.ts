@@ -4,7 +4,7 @@ import { Hello } from './hello';
 
 @NgModule({
   declarations: [
-    Hello,
+    Hello
   ],
   imports: [
     IonicPageModule.forChild(Hello),

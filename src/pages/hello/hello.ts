@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage/* , NavController, NavParams */, ActionSheetController, Platform, AlertController} from 'ionic-angular';
-import { LoadingController } from 'ionic-angular';
+import { IonicPage/* , NavController*/, NavParams , ActionSheetController, Platform, AlertController} from 'ionic-angular';
+import { LoadingController } from 'ionic-angular'; /* loading窗口 */
+import { ModalController } from 'ionic-angular'; /* 对话框 */
+import { ViewController} from 'ionic-angular';
+import { ModalContentPage } from '../modalContentPage/modalContentPage';
 
 /**
  * Generated class for the Hello page.
@@ -31,7 +34,8 @@ export class Hello {
 		public platform: Platform,
 		public actionSheetCtrl: ActionSheetController,
 		public alertCtrl: AlertController,
-		public loadingCtrl : LoadingController
+		public loadingCtrl : LoadingController,
+		public modalCtrl : ModalController
 	) { 
 		this._platform = platform;
 	}
@@ -170,4 +174,10 @@ export class Hello {
 			loading.dismiss();
 		}, 3000);	
 	}
+	
+	openModal(num) { /* 对话框演示 */
+		let modal = this.modalCtrl.create(ModalContentPage, num); /* 创建对话框 */
+		modal.present(); /* 显示对话框 */
+	}
 }
+

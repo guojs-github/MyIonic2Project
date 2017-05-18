@@ -354,4 +354,17 @@
 	
 	<!-- 等待演示 -->
 	<button ion-button color="secondary" round block (click)="flashWait()">点我会等3秒哦！</button>	
+	
+	<!-- 传递参数的对话框演示 -->
+	<ion-list>
+		<ion-list-header>
+			霍比特人
+		</ion-list-header>
+		<a ion-item (click)="openModal({charNum: 0})">
+			咕噜姆
+		</a>
+		<a ion-item (click)="openModal({charNum: 1})">
+			福拉多巴金斯
+		</a>
+	</ion-list>	
 </ion-content>
