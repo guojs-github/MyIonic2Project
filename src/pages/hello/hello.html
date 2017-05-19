@@ -358,7 +358,7 @@
 	<!-- 传递参数的对话框演示 -->
 	<ion-list>
 		<ion-list-header>
-			霍比特人
+			传递参数的对话框
 		</ion-list-header>
 		<a ion-item (click)="openModal({charNum: 0})">
 			咕噜姆
@@ -367,4 +367,16 @@
 			福拉多巴金斯
 		</a>
 	</ion-list>	
+	
+	<!-- 列表导航示例 -->
+	<ion-list>
+		<ion-list-header>
+			列表导航示例
+		</ion-list-header>
+		<button ion-item *ngFor="let item of _naviItems" (click)="openNaviDetail(item)" icon-left>
+			<ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon>
+			{{ item.title }}
+		</button>
+	</ion-list>
+	
 </ion-content>

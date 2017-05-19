@@ -4,14 +4,32 @@ import { LoadingController } from 'ionic-angular'; /* loading窗口 */
 import { ModalController } from 'ionic-angular'; /* 对话框 */
 import { ViewController} from 'ionic-angular';
 import { ModalContentPage } from '../modalContentPage/modalContentPage';
+import { NavController } from 'ionic-angular';
+
 
 /**
  * Generated class for the Hello page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
- */
+ */ 
 @IonicPage()
+/* 
+	导航明细页
+ */
+@Component({
+	templateUrl: 'navigation-details.html',
+})
+
+export class NavigationDetailsPage {
+	private _item; // 显示数据信息
+
+	constructor(params: NavParams) {
+		this._item = params.data.item;
+	}
+}
+
+
 @Component({
   selector: 'page-hello',
   templateUrl: 'hello.html',
@@ -30,12 +48,35 @@ export class Hello {
 	private swipe: number = 0;
 	private tap: number = 0;	
 	
+	/* 导航栏示例 */
+	private _naviItems = [
+		  {
+			'title': 'Angular',
+			'icon': 'angular',
+			'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
+			'color': '#E63135'
+		  },
+		  {
+			'title': 'CSS3',
+			'icon': 'css3',
+			'description': 'The latest version of cascading stylesheets - the styling language of the web!',
+			'color': '#0CA9EA'
+		  },
+		  {
+			'title': 'HTML5',
+			'icon': 'html5',
+			'description': 'The latest version of the web\'s markup language.',
+			'color': '#F46529'
+		  }
+	  ];
+	
 	constructor(
 		public platform: Platform,
 		public actionSheetCtrl: ActionSheetController,
 		public alertCtrl: AlertController,
-		public loadingCtrl : LoadingController,
-		public modalCtrl : ModalController
+		public loadingCtrl: LoadingController,
+		public modalCtrl: ModalController,
+		public nav: NavController
 	) { 
 		this._platform = platform;
 	}
@@ -178,6 +219,10 @@ export class Hello {
 	openModal(num) { /* 对话框演示 */
 		let modal = this.modalCtrl.create(ModalContentPage, num); /* 创建对话框 */
 		modal.present(); /* 显示对话框 */
+	}
+	
+	openNaviDetail(item) { /* 打开导航栏明细 */
+		this.nav.push(NavigationDetailsPage, { item: item });
 	}
 }
 
