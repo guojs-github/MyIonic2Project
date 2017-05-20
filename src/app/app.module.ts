@@ -7,8 +7,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { NavigationDetailsPage, Hello } from '../pages/hello/hello';
+import { Hello } from '../pages/hello/hello';
 import { ModalContentPage } from '../pages/modalContentPage/modalContentPage';
+import { NavigationDetailsPage } from '../pages/naviDetailsPage/naviDetailsPage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

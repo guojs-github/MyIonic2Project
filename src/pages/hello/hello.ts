@@ -5,7 +5,7 @@ import { ModalController } from 'ionic-angular'; /* 对话框 */
 import { ViewController} from 'ionic-angular';
 import { ModalContentPage } from '../modalContentPage/modalContentPage';
 import { NavController } from 'ionic-angular';
-
+import { NavigationDetailsPage } from '../naviDetailsPage/naviDetailsPage'
 
 /**
  * Generated class for the Hello page.
@@ -14,22 +14,6 @@ import { NavController } from 'ionic-angular';
  * on Ionic pages and navigation.
  */ 
 @IonicPage()
-/* 
-	导航明细页
- */
-@Component({
-	templateUrl: 'navigation-details.html',
-})
-
-export class NavigationDetailsPage {
-	private _item; // 显示数据信息
-
-	constructor(params: NavParams) {
-		this._item = params.data.item;
-	}
-}
-
-
 @Component({
   selector: 'page-hello',
   templateUrl: 'hello.html',
@@ -50,25 +34,35 @@ export class Hello {
 	
 	/* 导航栏示例 */
 	private _naviItems = [
-		  {
-			'title': 'Angular',
-			'icon': 'angular',
-			'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-			'color': '#E63135'
-		  },
-		  {
-			'title': 'CSS3',
-			'icon': 'css3',
-			'description': 'The latest version of cascading stylesheets - the styling language of the web!',
-			'color': '#0CA9EA'
-		  },
-		  {
-			'title': 'HTML5',
-			'icon': 'html5',
-			'description': 'The latest version of the web\'s markup language.',
-			'color': '#F46529'
-		  }
-	  ];
+		{
+		'title': 'Angular',
+		'icon': 'angular',
+		'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
+		'color': '#E63135'
+		},
+		{
+		'title': 'CSS3',
+		'icon': 'css3',
+		'description': 'The latest version of cascading stylesheets - the styling language of the web!',
+		'color': '#0CA9EA'
+		},
+		{
+		'title': 'HTML5',
+		'icon': 'html5',
+		'description': 'The latest version of the web\'s markup language.',
+		'color': '#F46529'
+		}
+	];
+
+	/* Range */
+	private _brightness: number = 20;
+	private _contrast: number = 0;
+	private _warmth: number = 1300;
+	private _structure: any = { lower: 33, upper: 60 };
+	private _text: number = 0;	
+
+	/* Search list */
+	private _items: any = [];
 	
 	constructor(
 		public platform: Platform,
@@ -79,8 +73,9 @@ export class Hello {
 		public nav: NavController
 	) { 
 		this._platform = platform;
+		this.initializeItems();
 	}
-  
+	
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad Hello');
 	}
@@ -223,6 +218,40 @@ export class Hello {
 	
 	openNaviDetail(item) { /* 打开导航栏明细 */
 		this.nav.push(NavigationDetailsPage, { item: item });
+	}
+	
+	initializeItems() { /* 初始化搜索列表项目 */
+		this._items = [
+			'Amsterdam'
+			, 'Bogota'
+			, 'Buenos Aires'
+			, 'Cairo'
+			, 'Dhaka'
+			, 'Edinburgh'
+			, 'Geneva'
+			, 'Genoa'
+			, 'Glasglow'
+			, 'Hanoi'
+			, 'Hong Kong'
+			, 'Islamabad'
+			, 'Istanbul'
+			, 'Jakarta'		
+		];		
+	}	
+  
+	filterItems(event) { /* 根据输入条件过滤列表 */
+		// Reset items back to all of the items
+		this.initializeItems();
+
+		// 获取用户的查询条件
+		var val = event.target.value;
+
+		// if the value is an empty string don't filter the items
+		if (val && val.trim() != '') { /* 条件非空 */
+			this._items = this._items.filter((item) => {
+				return (item.toLowerCase().indexOf(val.toLowerCase()) > -1); /* 输入字符串是条目名称子字符串就显示 */
+			})
+		}	
 	}
 }
 
