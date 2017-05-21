@@ -5,13 +5,19 @@
 			<ion-title>设置</ion-title>
 		</ion-toolbar>
 	</ion-header>
-  <ion-content>
-    <ion-list>
-		<button ion-item menuClose>
-			Popover 演示
-		</button>
-	</ion-list>
-  </ion-content>
+	<ion-content>
+		<ion-list>
+			<button ion-item menuClose (click)="openHelloPage()">
+				Hello!你好！
+			</button>
+			<button ion-item menuClose>
+				Popover 演示
+			</button>
+			<button ion-item menuClose>
+				Segments 演示
+			</button>
+		</ion-list>
+	</ion-content>
 </ion-menu>
 
 <ion-nav #mycontent [root]="rootPage"></ion-nav>
