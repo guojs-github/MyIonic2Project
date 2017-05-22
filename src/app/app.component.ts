@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { Hello } from '../pages/hello/hello';
+import { PopoverDemoPage } from '../pages/popoverDemo/popoverDemo';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +15,9 @@ import { Hello } from '../pages/hello/hello';
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 	rootPage:any = TabsPage;
-	helloPage = Hello;
+	
+	private _helloPage = Hello;
+	private _popoverDemoPage = PopoverDemoPage;
 
 	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 		platform.ready().then(() => {
@@ -27,6 +30,10 @@ export class MyApp {
 
 	openHelloPage() { /* 打开指定页面 */
 		// helpers.debounce(this.content.setRoot(helloPage), 60, false);
-		this.nav.push(Hello);
+		this.nav.push(this._helloPage);
+	}
+
+	openPopoverDemoPage() { /* 打开Popover演示 */
+		this.nav.push(this._popoverDemoPage);
 	}
 }

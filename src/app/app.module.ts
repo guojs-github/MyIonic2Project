@@ -10,20 +10,24 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Hello } from '../pages/hello/hello';
 import { ModalContentPage } from '../pages/modalContentPage/modalContentPage';
 import { NavigationDetailsPage } from '../pages/naviDetailsPage/naviDetailsPage';
+import { PopoverDemoPage} from '../pages/popoverDemo/popoverDemo';
+import { PopoverPage } from '../pages/popoverDemo/popoverDemo';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
-	MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage,
-	Hello,
-	ModalContentPage,
-	NavigationDetailsPage
+	MyApp
+	, AboutPage
+	, ContactPage
+	, HomePage
+	, TabsPage
+	, Hello
+	, ModalContentPage
+	, NavigationDetailsPage
+	, PopoverDemoPage
+	, PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -31,14 +35,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage,
-	Hello,
-	ModalContentPage,
-	NavigationDetailsPage	
+    MyApp
+	, AboutPage
+	, ContactPage
+	, HomePage
+	, TabsPage
+	, Hello
+	, ModalContentPage
+	, NavigationDetailsPage	
+	, PopoverDemoPage
+	, PopoverPage
   ],
   providers: [
     StatusBar,
