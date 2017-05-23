@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Hello } from '../pages/hello/hello';
 import { PopoverDemoPage } from '../pages/popoverDemo/popoverDemo';
+import { SegmentsDemoPage } from '../pages/segmentsDemo/segmentsDemo';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,6 +19,7 @@ export class MyApp {
 	
 	private _helloPage = Hello;
 	private _popoverDemoPage = PopoverDemoPage;
+	private _segmentsDemoPage = SegmentsDemoPage;
 
 	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 		platform.ready().then(() => {
@@ -35,5 +37,9 @@ export class MyApp {
 
 	openPopoverDemoPage() { /* 打开Popover演示 */
 		this.nav.push(this._popoverDemoPage);
+	}
+	
+	openSegmentsDemoPage() { /* 片段演示 */
+		this.nav.push(this._segmentsDemoPage);
 	}
 }

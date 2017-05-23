@@ -12,6 +12,7 @@ import { ModalContentPage } from '../pages/modalContentPage/modalContentPage';
 import { NavigationDetailsPage } from '../pages/naviDetailsPage/naviDetailsPage';
 import { PopoverDemoPage} from '../pages/popoverDemo/popoverDemo';
 import { PopoverPage } from '../pages/popoverDemo/popoverDemo';
+import { SegmentsDemoPage } from '../pages/segmentsDemo/segmentsDemo';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	, NavigationDetailsPage
 	, PopoverDemoPage
 	, PopoverPage
+	, SegmentsDemoPage
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	, NavigationDetailsPage	
 	, PopoverDemoPage
 	, PopoverPage
+	, SegmentsDemoPage
   ],
   providers: [
     StatusBar,
