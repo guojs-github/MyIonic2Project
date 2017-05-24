@@ -35,22 +35,22 @@ export class Hello {
 	/* 导航栏示例 */
 	private _naviItems = [
 		{
-		'title': 'Angular',
-		'icon': 'angular',
-		'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
-		'color': '#E63135'
+			'title': 'Angular',
+			'icon': 'angular',
+			'description': 'A powerful Javascript framework for building single page apps. Angular is open source, and maintained by Google.',
+			'color': '#E63135'
 		},
 		{
-		'title': 'CSS3',
-		'icon': 'css3',
-		'description': 'The latest version of cascading stylesheets - the styling language of the web!',
-		'color': '#0CA9EA'
+			'title': 'CSS3',
+			'icon': 'css3',
+			'description': 'The latest version of cascading stylesheets - the styling language of the web!',
+			'color': '#0CA9EA'
 		},
 		{
-		'title': 'HTML5',
-		'icon': 'html5',
-		'description': 'The latest version of the web\'s markup language.',
-		'color': '#F46529'
+			'title': 'HTML5',
+			'icon': 'html5',
+			'description': 'The latest version of the web\'s markup language.',
+			'color': '#F46529'
 		}
 	];
 
@@ -64,6 +64,15 @@ export class Hello {
 	/* Search list */
 	private _items: any = [];
 	
+	/* Select Control */
+	private _gender = "m";
+	private _game = "";
+	private _notifications = "mute_week";
+	private _music: string;
+	private _musicAlertOpts: { title: string, subTitle: string };
+	private _yearSelected: number;
+	private _monthSelected: string;
+	
 	constructor(
 		public platform: Platform,
 		public actionSheetCtrl: ActionSheetController,
@@ -74,6 +83,12 @@ export class Hello {
 	) { 
 		this._platform = platform;
 		this.initializeItems();
+		
+		/* Select Control Demo */
+	    this._musicAlertOpts = {
+			title: '1994 Music',
+			subTitle: 'Select your favorite'
+		};
 	}
 	
 	ionViewDidLoad() {
@@ -252,6 +267,11 @@ export class Hello {
 				return (item.toLowerCase().indexOf(val.toLowerCase()) > -1); /* 输入字符串是条目名称子字符串就显示 */
 			})
 		}	
+	}
+	
+	/* Select Control Demo */
+	stpSelect() {
+		console.log('STP selected');
 	}
 }
 

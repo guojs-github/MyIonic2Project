@@ -463,4 +463,83 @@
 			</ion-item>
 		</ion-list>
 	</ion-card>
+	
+	<!-- Select Control 演示 -->
+	<ion-list>
+		<ion-list-header>选择控件演示</ion-list-header>
+		<ion-item>
+			<ion-label>性别</ion-label>
+			<ion-select [(ngModel)]="_gender"  okText="买定离手" cancelText="取消">
+				<ion-option value="f">女</ion-option>
+				<ion-option value="m">男</ion-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item>
+		  <ion-label>游戏选择</ion-label>
+			<ion-select [(ngModel)]="_game" interface="popover">
+				<ion-option value="nes">NES</ion-option>
+				<ion-option value="n64">Nintendo64</ion-option>
+				<ion-option value="ps">PlayStation</ion-option>
+				<ion-option value="genesis">Sega Genesis</ion-option>
+				<ion-option value="saturn">Sega Saturn</ion-option>
+				<ion-option value="snes">SNES</ion-option>
+			</ion-select>
+		</ion-item>	
+		
+		<ion-item>
+			<ion-label>消息通知</ion-label>
+			<ion-select [(ngModel)]="_notifications" interface="action-sheet">
+				<ion-option value="enable">开启</ion-option>
+				<ion-option value="mute">关闭</ion-option>
+				<ion-option value="mute_week">关闭一周</ion-option>
+				<ion-option value="mute_year" (ionSelect)="notificationSelect($event)">关闭一年</ion-option>
+			</ion-select>
+		</ion-item>		
+
+		<ion-item>
+			<ion-label>音乐</ion-label>
+			<ion-select [(ngModel)]="_music" [selectOptions]="_musicAlertOpts">
+				<ion-option>Alice in Chains</ion-option>
+				<ion-option>Green Day</ion-option>
+				<ion-option>Nirvana</ion-option>
+				<ion-option>Pearl Jam</ion-option>
+				<ion-option>Smashing Pumpkins</ion-option>
+				<ion-option>Soundgarden</ion-option>
+				<ion-option (select)="stpSelect()">Stone Temple Pilots</ion-option>
+			</ion-select>
+		</ion-item>		
+
+
+		<ion-item>
+			<ion-label>日期</ion-label>
+			<ion-select [(ngModel)]="_yearSelected">
+				<ion-option>1989</ion-option>
+				<ion-option>1990</ion-option>
+				<ion-option>1991</ion-option>
+				<ion-option>1992</ion-option>
+				<ion-option>1993</ion-option>
+				<ion-option checked="true">1994</ion-option>
+				<ion-option>1995</ion-option>
+				<ion-option>1996</ion-option>
+				<ion-option>1997</ion-option>
+				<ion-option>1998</ion-option>
+				<ion-option>1999</ion-option>
+			</ion-select>
+			<ion-select [(ngModel)]="_monthSelected">
+				<ion-option value="01">1月</ion-option>
+				<ion-option value="02">2月</ion-option>
+				<ion-option value="03">3月</ion-option>
+				<ion-option value="04">4月</ion-option>
+				<ion-option value="05">5月</ion-option>
+				<ion-option value="06">6月</ion-option>
+				<ion-option value="07">7月</ion-option>
+				<ion-option value="08">8月</ion-option>
+				<ion-option value="09">9月</ion-option>
+				<ion-option value="10">10月</ion-option>
+				<ion-option value="11">11月</ion-option>
+				<ion-option value="12" checked="true">12月</ion-option>
+			</ion-select>
+		</ion-item>		
+	</ion-list>	
 </ion-content>
