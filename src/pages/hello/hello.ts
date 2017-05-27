@@ -3,8 +3,10 @@ import { IonicPage/* , NavController*/, NavParams , ActionSheetController, Platf
 import { LoadingController } from 'ionic-angular'; /* loading窗口 */
 import { ModalController } from 'ionic-angular'; /* 对话框 */
 import { ViewController} from 'ionic-angular';
-import { ModalContentPage } from '../modalContentPage/modalContentPage';
 import { NavController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
+
+import { ModalContentPage } from '../modalContentPage/modalContentPage';
 import { NavigationDetailsPage } from '../naviDetailsPage/naviDetailsPage'
 
 /**
@@ -74,12 +76,13 @@ export class Hello {
 	private _monthSelected: string;
 	
 	constructor(
-		public platform: Platform,
-		public actionSheetCtrl: ActionSheetController,
-		public alertCtrl: AlertController,
-		public loadingCtrl: LoadingController,
-		public modalCtrl: ModalController,
-		public nav: NavController
+		public platform: Platform
+		, public actionSheetCtrl: ActionSheetController
+		, public alertCtrl: AlertController
+		, public loadingCtrl: LoadingController
+		, public modalCtrl: ModalController
+		, public nav: NavController
+		, public toastCtrl: ToastController
 	) { 
 		this._platform = platform;
 		this.initializeItems();
@@ -273,5 +276,32 @@ export class Hello {
 	stpSelect() {
 		console.log('STP selected');
 	}
+	
+	/* Toast Demo */
+	showToast(position: string) { /* 在指定位置显示消息 */
+		let toast = this.toastCtrl.create({
+			message: 'Hello，这是一个演示用的消息',
+			duration: 2000,
+			position: position
+		});
+		toast.present(toast); // show
+	}
+
+	showToastWithCloseButton() { /* toast with a close button */
+		const toast = this.toastCtrl.create({
+			message: '丈夫只手把吴钩，意气高于百尺楼。 一万年来谁著史? 三千里外欲封侯。定须捷足随途骥，那有闲情逐野鸥!笑指芦沟桥畔路，有人从此到瀛洲。',
+			showCloseButton: true,
+			closeButtonText: '收到'
+		});		
+		toast.present(); // show
+	}
+
+	showLongToast() { /* long message */
+		let toast = this.toastCtrl.create({
+		  message: ' 丈夫只手把吴钩，意气高于百尺楼。 一万年来谁著史? 三千里外欲封侯。定须捷足随途骥，那有闲情逐野鸥!笑指芦沟桥畔路，有人从此到瀛洲。',
+		  duration: 5000,
+		});
+		toast.present(); // show
+	}	
 }
 

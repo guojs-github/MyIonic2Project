@@ -542,4 +542,16 @@
 			</ion-select>
 		</ion-item>		
 	</ion-list>	
+	
+	<!-- 消息提示 -->
+	<ion-card>
+		<ion-card-content>消息提示</ion-card-content>
+		<ion-item>
+			<button class="button" color="primary" ion-button block (click)="showToast('top')">顶端显示</button>
+			<button class="button" color="primary" ion-button block (click)="showToast('middle')">中间显示</button>
+			<button class="button" color="primary" ion-button block (click)="showToast('bottom')">底部显示</button>
+			<button class="button" color="primary" ion-button block (click)="showLongToast()">显示多文字消息</button>
+			<button class="button" color="primary" ion-button block (click)="showToastWithCloseButton()">显示带关闭按钮消息</button>
+		</ion-item>		
+	</ion-card>
 </ion-content>
