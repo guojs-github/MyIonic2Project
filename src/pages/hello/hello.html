@@ -554,4 +554,36 @@
 			<button class="button" color="primary" ion-button block (click)="showToastWithCloseButton()">显示带关闭按钮消息</button>
 		</ion-item>		
 	</ion-card>
+	
+	<!-- Toggle演示 -->
+	<ion-list>
+		<ion-list-header>
+			Toggle控件演示
+		</ion-list-header>
+
+		<ion-item>
+		  <ion-label>Frodo Baggins</ion-label>
+		  <ion-toggle value="foo" checked="true" [(ngModel)]="_toggleValue" (ionChange)="onToggleChange()"></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Sam</ion-label>
+			<ion-toggle color="energized"></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Éowyn</ion-label>
+			<ion-toggle color="danger" checked="true"></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Legolas</ion-label>
+			<ion-toggle color="royal" checked="true"></ion-toggle>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Saruman</ion-label>
+			<ion-toggle color="dark" checked="true"></ion-toggle>
+		</ion-item>
+	</ion-list>
 </ion-content>

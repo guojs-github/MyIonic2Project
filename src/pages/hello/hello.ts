@@ -75,6 +75,9 @@ export class Hello {
 	private _yearSelected: number;
 	private _monthSelected: string;
 	
+	/* Toggle control */
+	private _toggleValue:boolean = false;
+	
 	constructor(
 		public platform: Platform
 		, public actionSheetCtrl: ActionSheetController
@@ -302,6 +305,16 @@ export class Hello {
 		  duration: 5000,
 		});
 		toast.present(); // show
-	}	
+	}
+
+	/* Toggle Control */
+	onToggleChange() {
+		let toast = this.toastCtrl.create({
+			message: '修改值为' + this._toggleValue,
+			duration: 2000,
+			position: 'bottom'
+		});
+		toast.present(toast); // show		
+	}
 }
 

@@ -10,6 +10,8 @@ import { Hello } from '../pages/hello/hello';
 import { PopoverDemoPage } from '../pages/popoverDemo/popoverDemo';
 import { SegmentsDemoPage } from '../pages/segmentsDemo/segmentsDemo';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { ToolbarDemoPage } from '../pages/toolbarDemo/toolbarDemo';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -22,6 +24,7 @@ export class MyApp {
 	private _popoverDemoPage = PopoverDemoPage;
 	private _segmentsDemoPage = SegmentsDemoPage;
 	private _tutorialPage = TutorialPage;
+	private _toolbarDemoPage = ToolbarDemoPage;
 
 	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 		platform.ready().then(() => {
@@ -46,5 +49,9 @@ export class MyApp {
 	
 	openSegmentsDemoPage() { /* 片段演示 */
 		this.nav.push(this._segmentsDemoPage);
+	}
+	
+	openToolbarDemoPage() { /* 工具条演示*/
+		this.nav.push(this._toolbarDemoPage);
 	}
 }
