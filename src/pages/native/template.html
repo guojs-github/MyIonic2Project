@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar no-border-bottom>
+		<ion-title>
+			本地功能演示
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-card showWhen="android">
+		<ion-card-content>指纹演示</ion-card-content>
+		<ion-item>
+			<button class="button" color="primary" ion-button block (click)="detectFingerprint()">指纹检测</button>
+		</ion-item>		
+	</ion-card>
+	<ion-card>
+		<ion-card-content>扫描二维码</ion-card-content>
+		<ion-item>
+			<button class="button" color="primary" ion-button block (click)="scanBarcode()">扫一扫</button>
+		</ion-item>		
+	</ion-card>	
+</ion-content>
+

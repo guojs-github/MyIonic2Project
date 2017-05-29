@@ -15,9 +15,12 @@ import { PopoverPage } from '../pages/popoverDemo/popoverDemo';
 import { SegmentsDemoPage } from '../pages/segmentsDemo/segmentsDemo';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { ToolbarDemoPage } from '../pages/toolbarDemo/toolbarDemo';
+import { NativePage } from '../pages/native/native';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	, SegmentsDemoPage
 	, TutorialPage
 	, ToolbarDemoPage
+	, NativePage
   ],
   imports: [
     BrowserModule,
@@ -54,11 +58,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	, SegmentsDemoPage
 	, TutorialPage
 	, ToolbarDemoPage
+	, NativePage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    StatusBar
+	, SplashScreen
+	, {provide: ErrorHandler, useClass: IonicErrorHandler}
+	, AndroidFingerprintAuth
+	, BarcodeScanner
   ]
 })
 export class AppModule {}

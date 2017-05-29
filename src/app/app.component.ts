@@ -11,7 +11,7 @@ import { PopoverDemoPage } from '../pages/popoverDemo/popoverDemo';
 import { SegmentsDemoPage } from '../pages/segmentsDemo/segmentsDemo';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { ToolbarDemoPage } from '../pages/toolbarDemo/toolbarDemo';
-
+import { NativePage } from '../pages/native/native';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +25,7 @@ export class MyApp {
 	private _segmentsDemoPage = SegmentsDemoPage;
 	private _tutorialPage = TutorialPage;
 	private _toolbarDemoPage = ToolbarDemoPage;
+	private _nativePage = NativePage; // native function demo
 
 	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 		platform.ready().then(() => {
@@ -53,5 +54,9 @@ export class MyApp {
 	
 	openToolbarDemoPage() { /* 工具条演示*/
 		this.nav.push(this._toolbarDemoPage);
+	}
+
+	openNativePage() { /* Native function demo */
+		this.nav.push(this._nativePage);
 	}
 }
