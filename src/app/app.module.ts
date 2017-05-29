@@ -21,6 +21,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 	, NativePage
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
+    BrowserModule
+	, IonicModule.forRoot(MyApp)
+	, IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
