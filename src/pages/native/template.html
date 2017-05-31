@@ -30,8 +30,19 @@
  -->
  				<qr-code [value]="_barcode"></qr-code>
 			</div>
-			<div id="barcode-description"><br>扫一扫上面的二维码图案，你会知道我的意思</div>
+			<div id="barcode-description"><br>扫一扫上面的二维码图案</div>
 		</ion-item>	
 	</ion-card>	
+	<ion-card>
+		<ion-card-content>链接</ion-card-content>
+		<ion-item>
+			<button class="button" color="primary" ion-button block (click)="navigate('http://tech.sina.com.cn/')">
+				使用内置浏览器打开测试地址
+			</button>
+			<button class="button" color="primary" ion-button block (click)="cordovaNavigate('https://ionicframework.com/')">
+				使用cordova打开测试地址
+			</button>
+		</ion-item>		
+	</ion-card>
 </ion-content>
 

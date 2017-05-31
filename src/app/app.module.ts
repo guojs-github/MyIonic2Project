@@ -23,6 +23,7 @@ import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage'; // 简单数据保存
 import { QRCodeModule } from 'angular2-qrcode'; // 二维码生成支持
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { QRCodeModule } from 'angular2-qrcode'; // 二维码生成支持
 	, {provide: ErrorHandler, useClass: IonicErrorHandler}
 	, AndroidFingerprintAuth
 	, BarcodeScanner
+	, InAppBrowser
   ]
 })
 export class AppModule {}

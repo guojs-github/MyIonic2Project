@@ -7,9 +7,13 @@ import { AlertController} from 'ionic-angular';
 import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Storage } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+declare var cordova: any;
 
 @Component({
-	templateUrl: 'template.html'
+	templateUrl: 'template.html',
+	providers: [InAppBrowser]
 })
 export class NativePage {
 	private _fingerprintConfig;
@@ -21,6 +25,7 @@ export class NativePage {
  		, public androidFingerprintAuth: AndroidFingerprintAuth // 指纹识别	
  		, public barcodeScanner: BarcodeScanner // 条码扫描
 		, public storage: Storage // 存储对象
+		, public iab: InAppBrowser // 内置浏览器
 	) {		
 		this.loadFingerprint(); // Read footprint
 	}
@@ -169,4 +174,15 @@ export class NativePage {
 		}
 		);		
 	}
+	
+	cordovaNavigate(url) { // 内置浏览器
+		var ref = cordova.InAppBrowser.open(url, "_blank", "location=no");
+		let barcode = this._barcode;
+		ref.addEventListener('loadstart', function(event) { alert("开始加载" + event.url); });		
+		ref.addEventListener('exit', function(event) { alert("浏览器退出"); alert("测试获取barcode的值" + barcode)});		
+	} 
+
+	navigate(url) { // 内置浏览器	 
+ 		let browser = this.iab.create( url, "_blank", "location=yes");
+	} 
 }
