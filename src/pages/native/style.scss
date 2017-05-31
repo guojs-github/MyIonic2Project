@@ -1,0 +1,17 @@
+#barcode{
+	align: center !important;
+}
+
+#barcode qr-code img{
+	width: 150px;
+	height: 150px;
+	/*¾ÓÖÐÑùÊ½*/
+	clear: both;
+	display: block;
+	margin:auto;
+}
+
+#barcode-description {
+	font-weight: bold;
+	text-align: center;
+}

@@ -24,6 +24,14 @@
 		<ion-item>
 			<button class="button" color="primary" ion-button block (click)="scanBarcode()">扫一扫</button>
 		</ion-item>		
+		<ion-item>
+			<div id="barcode" >				
+<!-- 				<qr-code [value]="'All QR Code data goes here!'"></qr-code>
+ -->
+ 				<qr-code [value]="_barcode"></qr-code>
+			</div>
+			<div id="barcode-description"><br>扫一扫上面的二维码图案，你会知道我的意思</div>
+		</ion-item>	
 	</ion-card>	
 </ion-content>
 

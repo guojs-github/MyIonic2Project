@@ -9,11 +9,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  templateUrl: 'template.html'
+	templateUrl: 'template.html'
 })
 export class NativePage {
 	private _fingerprintConfig;
 	private _fingerprintKey = "token";
+	private _barcode = "OK!RKTZ-20170531-000001";
 	
 	constructor(
 		public alertCtrl: AlertController // 消息窗口

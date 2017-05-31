@@ -26,6 +26,7 @@
     "@ionic-native/splash-screen": "3.6.1",
     "@ionic-native/status-bar": "3.6.1",
     "@ionic/storage": "^2.0.1",
+    "angular2-qrcode": "^2.0.1",
     "cordova-plugin-android-fingerprint-auth": "^1.2.7",
     "cordova-plugin-compat": "^1.0.0",
     "cordova-plugin-console": "1.0.5",

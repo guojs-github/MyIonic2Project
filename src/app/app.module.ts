@@ -21,7 +21,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage'; // 简单数据保存
+import { QRCodeModule } from 'angular2-qrcode'; // 二维码生成支持
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule
 	, IonicModule.forRoot(MyApp)
 	, IonicStorageModule.forRoot()
+	, QRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
